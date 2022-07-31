@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.home{
+  display: flex;
+  width: 100vw;
+  background: red;
+}
+.tasks{
+  width:6vw;
+}
+.folders{
+  width: 40vw;
+  background-color: blue;
+}
