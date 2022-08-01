@@ -15,7 +15,7 @@ export const Folders = () => {
     useEffect(()=>{getFolders()},[])
   return (
     <div className='folders'>
-      {folders ? folders.map((e)=>{return <Folder folder={e}/>}):''}
+      {folders ? folders.map((e)=>{return <Folder Folder={e}/>}):''}
     </div>
   )
 }

@@ -5,12 +5,46 @@
 .home{
   display: flex;
   width: 100vw;
-  background: red;
 }
 .tasks{
-  width:6vw;
+  width:75vw;
 }
 .folders{
-  width: 40vw;
-  background-color: blue;
+  width: 25vw;
+}
+.tasks .task{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  border:1px rgba(0, 0, 0, 0.3) solid;
+}
+.tasks .task .task-title{
+  font-size: 1.9em;
+  margin: 0 0 10px;
+}
+.tasks .task .task-content{
+  font-size: 1.4em;
+}
+.tasks form{
+  height: 60px;
+  display: flex;
+  padding: 0;
+}
+.tasks form input{
+  width: 20%;
+  background-color: transparent;
+  font-size:1.2em;
+  border: solid 1px rgba(0, 0, 0, 0.408);
+}
+.tasks form input[type="text"]{
+  width: 80%;
+  padding: 0 10px;
+}
+.folder{
+  padding: 20px 10px;
+  font-size: 2.5em;
+}
+.actual{
+  box-shadow:10px 20px 20px rgba(0, 0, 0, 0.1);
+  border:solid 1px rgba(0, 0, 0, 0.408);
 }

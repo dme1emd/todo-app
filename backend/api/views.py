@@ -18,9 +18,9 @@ def folderListCreateApiView(request , pk = None) :
 def taskListCreateApiView(request , pk = None) : 
     if request.method == "GET" : 
         print(pk)
-        queryset= Task.objects.filter(folder__id = pk)
+        queryset= Task.objects.filter(folder__id = pk).order_by('-id')
         serializer = TaskSerializer(queryset , many=True)
         return response.Response(data=serializer.data)
     if request.method == 'POST' : 
-        Task.objects.create(title = request.data.get('title'),content = request.data.get('content'),folder = Folder.objects.get(pk=pk))
+        Task.objects.create(title = request.data.get('title'),folder = Folder.objects.get(pk=pk))
         return response.Response(status=201)
