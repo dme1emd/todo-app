@@ -6,5 +6,4 @@ class Folder(models.Model):
     profile = models.ForeignKey(Profile,related_name='sender',on_delete=models.CASCADE)
 class Task(models.Model):
     title = models.CharField(max_length=30)
-    content = models.CharField(max_length=200)
     folder =models.ForeignKey(Folder ,related_name='folder',on_delete=models.CASCADE)
