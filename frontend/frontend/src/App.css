@@ -14,9 +14,22 @@
 }
 .tasks .task{
   display: flex;
-  flex-direction: column;
+  justify-content:space-between;
+  align-items:center;
   padding: 10px 5px;
   border:1px rgba(0, 0, 0, 0.3) solid;
+}
+.icons{
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+}
+.modify{
+  margin:0 30px;
+  font-size: 1.5em;
+} 
+.done{
+  font-size: 2em;
 }
 .tasks .task .task-title{
   font-size: 1.9em;
@@ -47,4 +60,24 @@
 .actual{
   box-shadow:10px 20px 20px rgba(0, 0, 0, 0.1);
   border:solid 1px rgba(0, 0, 0, 0.408);
+}
+.delete{
+  color:red;
+  font-size: 1.3em;
+}
+.input-modify{
+  border: none;
+  font-size:1.9em;
+  width: 70%;
+  margin:0;
+  padding:17px 5px;
+}
+.container-modify{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  border:1px rgba(0, 0, 0, 0.3) solid;
+}
+.modify-active{
+  color: rgb(64, 255, 47);
 }

@@ -10,12 +10,14 @@ export const Tasks = () => {
     const handleAdd = async(e)=>{
         e.preventDefault()
         setTitle('')
-        setTasks([{title:e.target.task.value},...tasks])
         await fetch(`${domain}api/tasks/${folder}/`,{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             body:JSON.stringify({title:e.target.task.value})
         })
+        const response = await fetch(`${domain}api/tasks/${folder}/`)
+        const data = await response.json()
+        setTasks(data)
     }
   return (
     <div  className='tasks'>

@@ -6,15 +6,13 @@ from rest_framework import decorators , response
 @decorators.api_view(['GET','POST'])
 def folderListCreateApiView(request , pk = None) : 
     if request.method == "GET" : 
-        print(pk)
-        queryset= Folder.objects.filter(profile__id = pk)
-        print(queryset)
+        queryset= Folder.objects.filter(profile__id = pk).order_by('-id')
         serializer = FolderSerializer(queryset , many=True).data
         return response.Response(serializer)
     if request.method == 'POST' : 
         Folder.objects.create(name = request.data.get('name'),profile = Profile.objects.get(pk=pk))
         return response.Response(status=201)
-@decorators.api_view(['GET','POST'])
+@decorators.api_view(['GET','POST','DELETE'])
 def taskListCreateApiView(request , pk = None) : 
     if request.method == "GET" : 
         print(pk)
@@ -24,3 +22,7 @@ def taskListCreateApiView(request , pk = None) :
     if request.method == 'POST' : 
         Task.objects.create(title = request.data.get('title'),folder = Folder.objects.get(pk=pk))
         return response.Response(status=201)
+    if request.method== 'DELETE':
+        print("ddjozpjoe")
+        Task.objects.get(pk=pk).delete()
+        return response.Response(status=204)
