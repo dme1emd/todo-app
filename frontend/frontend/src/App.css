@@ -81,3 +81,24 @@
 .modify-active{
   color: rgb(64, 255, 47);
 }
+.select-folder{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 2em;
+}
+.folder-add{
+  width: 70%;
+  padding:20px 10px;
+  margin: 0;
+}
+.folder-form{
+  padding: 0;
+  height:60px;
+}
+.folder-confirm{
+  width:22%;
+  height: 100%;
+  padding: 0;
+}

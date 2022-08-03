@@ -12,7 +12,7 @@ def folderListCreateApiView(request , pk = None) :
     if request.method == 'POST' : 
         Folder.objects.create(name = request.data.get('name'),profile = Profile.objects.get(pk=pk))
         return response.Response(status=201)
-@decorators.api_view(['GET','POST','DELETE'])
+@decorators.api_view(['GET','POST','DELETE','PATCH'])
 def taskListCreateApiView(request , pk = None) : 
     if request.method == "GET" : 
         print(pk)
@@ -23,6 +23,14 @@ def taskListCreateApiView(request , pk = None) :
         Task.objects.create(title = request.data.get('title'),folder = Folder.objects.get(pk=pk))
         return response.Response(status=201)
     if request.method== 'DELETE':
-        print("ddjozpjoe")
         Task.objects.get(pk=pk).delete()
         return response.Response(status=204)
+    if request.method == 'PATCH':
+        instance = Task.objects.get(pk=pk)
+        print(request.data)
+        serializer = TaskSerializer(instance=instance , data=request.data ,partial = True)
+        if serializer.is_valid():
+            serializer.save()
+            return response.Response(status = 200)
+        return response.Response(status = 400)
+        
