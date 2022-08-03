@@ -6,7 +6,6 @@ export const Tasks = () => {
     const [title,setTitle] = useState('')
     const {tasks , setTasks , folder} = useContext(TasksContext)
     const {domain}=useContext(DomainContext)
-    useEffect(()=>{console.log(tasks)},[tasks])
     const handleAdd = async(e)=>{
         e.preventDefault()
         setTitle('')
@@ -19,7 +18,9 @@ export const Tasks = () => {
         const data = await response.json()
         setTasks(data)
     }
+    
   return (
+    folder ? 
     <div  className='tasks'>
         <form onSubmit={handleAdd}>
             <input type='text' placeholder='add a task' name='task' value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
@@ -27,5 +28,7 @@ export const Tasks = () => {
         </form>
         {tasks ? tasks.map((task)=>{return <Task task={task}/>}):'e'}
     </div>
+    :
+    <div className='select-folder'>select folder please</div>
   )
 }

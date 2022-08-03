@@ -12,6 +12,14 @@ export const Task = ({task}) => {
         await fetch(`${domain}api/tasks/${task.id}/`,{method:'DELETE'})
         setShow(false)
     }
+    const handleStopModifiying=async ()=>{
+        await fetch(`${domain}api/tasks/${task.id}/`,
+        {
+                method:"PATCH",
+                headers:{'Content-Type': 'application/json'},
+                body:JSON.stringify({title:modifiedTitle})
+        })
+    }
   return (
     show ?
           isBeingModified ? 
@@ -19,13 +27,13 @@ export const Task = ({task}) => {
                 <input value={modifiedTitle} onChange={(e)=>{SetModifiedTitle(e.target.value)}} className='input-modify'/>
                 <div className='icons'>
                     <MdOutlineDone className='done'/>
-                    <BsPencil className='modify modify-active' onClick={()=>{setIsbeingModified(false)}}/>
+                    <BsPencil className='modify modify-active' onClick={handleStopModifiying}/>
                     <ImCross onClick={handleDelete} className='delete'/>
                 </div> 
             </div>
             :
             <div className='task'>
-                <div className='task-title'>{task.title}</div>
+                <div className='task-title'>{modifiedTitle}</div>
                 <div className='icons'>
                     <MdOutlineDone className='done'/>
                     <BsPencil className='modify' onClick={()=>{setIsbeingModified(true)}}/>
