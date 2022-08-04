@@ -102,3 +102,44 @@
   height: 100%;
   padding: 0;
 }
+.task-done{
+  position:relative;
+  color:rgba(0, 0, 0, 0.3);
+}
+.task-done::before{
+  content: '';
+  height: 1px;
+  width:90%;
+  background: rgba(0, 0, 0, 0.412);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+.done-true{
+  color: rgb(64, 255, 47);
+}
+.login , .signup{
+  display: flex;
+  flex-direction: column;
+  height: 46vh;
+  width:26vw;
+  margin: 27vh 37vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.signup{
+  height:50vh;
+}
+.login input , .signup input{
+  padding: 15px 10px;
+  font-size: 1.5em;
+}
+.login input[type="submit"]{
+  width:200px;
+  height: 70px;
+  font-size:1.4em;
+}
+.link{
+  font-size:1.3em;
+}

@@ -1,5 +1,6 @@
 import jwt_decode from 'jwt-decode'
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
 import DomainContext from '../context/DomainContext'
 export const Login = () => {
@@ -27,10 +28,14 @@ export const Login = () => {
 }
 
   return (
-    <form onSubmit={handleLogin}>
-      <input name='email' type='email' placeholder='email'/>
-      <input name='password' type='password' placeholder='password'/>
+    <form onSubmit={handleLogin} className='login'>
+      <h1>login</h1>
+      <input name='email' type='email' placeholder='email' className='email'/>
+      <input name='password' type='password' placeholder='password' className='password'/>
       <input type='submit'/>
+      <div className='link'>
+        if you dont have an account<Link to='/signup/'>signup</Link>          
+      </div>
     </form>
   )
 }
