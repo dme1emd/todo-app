@@ -9,4 +9,5 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('folders/<int:pk>/',folderListCreateApiView),
     path('tasks/<int:pk>/',taskListCreateApiView),
+    path('profiles/',ProfileCreate)
 ]

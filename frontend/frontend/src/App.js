@@ -16,13 +16,13 @@ function App() {
         <TasksProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<PrivateRoute/>}>
+            <Route element={<PrivateRoute/>} exact>
               
                 <Route element ={<Home/>} path='/' exact/>
               
 
             </Route>
-            <Route element={<NotAuthedOnlyRoute/>}>
+            <Route element={<NotAuthedOnlyRoute/>} exact>
               <Route element={<Login/>} path='/login/'/>
               <Route element={<Signup/>} path='/signup/'/>
             </Route>
