@@ -7,6 +7,7 @@ import { Login } from './pages/Login';
 import { PrivateRoute } from './utils/PrivateRoute';
 import { NotAuthedOnlyRoute } from './utils/NotAuthedOnlyRoute';
 import {Home} from './pages/Home'
+import { Signup } from './pages/Signup';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
             </Route>
             <Route element={<NotAuthedOnlyRoute/>}>
               <Route element={<Login/>} path='/login/'/>
+              <Route element={<Signup/>} path='/signup/'/>
             </Route>
           </Routes>
         </BrowserRouter>
