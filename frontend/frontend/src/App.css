@@ -56,6 +56,13 @@
 .folder{
   padding: 20px 10px;
   font-size: 2.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete-folder{
+  font-size: .5em;
+  color: red;
 }
 .actual{
   box-shadow:10px 20px 20px rgba(0, 0, 0, 0.1);
@@ -129,7 +136,7 @@
   align-items: center;
 }
 .signup{
-  height:50vh;
+  height:58vh;
 }
 .login input , .signup input{
   padding: 15px 10px;
@@ -142,4 +149,19 @@
 }
 .link{
   font-size:1.3em;
+}
+.login a , .signup a {
+  font-size: 1.1em;
+  text-decoration: none;
+}
+h2{
+  font-weight: 500;
+  color:red;
+  font-size: 1.1em;
+}
+.logout{
+  font-size: 4em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
