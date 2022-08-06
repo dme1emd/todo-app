@@ -3,7 +3,7 @@ const DomainContext = createContext()
 export default DomainContext;
 export const DomainProvider = ({children}) => {
   return (
-    <DomainContext.Provider value={{domain:"http://127.0.0.1:8000/"}}>
+    <DomainContext.Provider value={{domain:"https://todo-app-mohal.herokuaplmp.com/"}}>
         {children}
     </DomainContext.Provider>
   )

@@ -9,7 +9,7 @@
 .tasks{
   width:75vw;
 }
-.folders{
+.folders , .folders-none{
   width: 25vw;
 }
 .tasks .task{
@@ -129,8 +129,6 @@
 .login , .signup{
   display: flex;
   flex-direction: column;
-  height: 46vh;
-  width:26vw;
   margin: 27vh 37vw;
   justify-content: space-between;
   align-items: center;
@@ -138,14 +136,21 @@
 .signup{
   height:58vh;
 }
+.signup h1{
+  font-size: 3em;
+  margin-bottom: 15px;
+}
 .login input , .signup input{
   padding: 15px 10px;
   font-size: 1.5em;
+  margin: 10px 0;
 }
 .login input[type="submit"]{
   width:200px;
   height: 70px;
   font-size:1.4em;
+  background: white;
+  border: none;
 }
 .link{
   font-size:1.3em;
@@ -153,6 +158,7 @@
 .login a , .signup a {
   font-size: 1.1em;
   text-decoration: none;
+  color: #FF0063;
 }
 h2{
   font-weight: 500;
@@ -164,4 +170,19 @@ h2{
   position: absolute;
   bottom: 0;
   right: 0;
+}
+@media screen and (max-width:400px){
+  .folders-none{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .folders{
+    width: 100vw;
+  }
+  .menu{
+    position: absolute;
+    z-index:300;
+  }
 }
