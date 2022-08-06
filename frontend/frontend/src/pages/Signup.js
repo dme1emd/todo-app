@@ -11,6 +11,7 @@ export const Signup = () => {
   const handleSignup=async(e)=>{
     e.preventDefault()
     setMessage('')
+    console.log('d')
     if(confirm != password){
       setMessage(`password and confirmation not matching`)
       return
@@ -19,15 +20,18 @@ export const Signup = () => {
       setMessage(`password too short`)
       return 
     }
+    console.log(domain)
     const response = await fetch(`${domain}api/profiles/`,{
       method:"POST",
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({email:e.target.email.value , username:username,password : password})
     })
+    console.log(response)
     if (response.status ===409) {
       setMessage('an account with this email alreay exists')
       return
     }
+    console.log(response)
     navigate('/')
   } 
   return (

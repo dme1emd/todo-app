@@ -6,7 +6,7 @@ export const Logout = () => {
     const handleLogout = ()=>{
         setUserId(null)
         setToken(null)
-        localStorage.setItem('token_jwt',null)
+        localStorage.removeItem('token_jwt')
     }
   return (
     <div className='logout'>
